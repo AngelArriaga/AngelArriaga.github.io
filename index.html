@@ -1,45 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <script type="text/javascript">
-        var dataUrl = "//d10xkldqejj5hr.cloudfront.net/dev/dashboard.json";
-        //dataUrl = "//mysafeinfo.com/api/data?list=englishmonarchs&format=json";
-        var data = null;
-        $(function () {
-            $.getJSON(dataUrl, null, getDataSuccess).fail(getDataFail).always(getDataAlways);
-        })
-
-        function getDataSuccess(d) {
-            data = d;
-            console.log("Success");
-            for (var i = 0; i < data.TitleRows.length; i++) {
-                var row = data.TitleRows[i];
-                $("body").append('<div id="titlerow-' + i + '"><h2>' + row.Name + '</h2></div>');
-                $("#titlerow-"+i).append("<ul>");
-                for (var j = 0; j < row.Titles.length; j++) {
-                    var title = row.Titles[j];
-                    $("#titlerow-" + i).append("<li>"+title.Name+"</li>");
-                }
-                $("#titlerow-" + i).append("</ul>");
-            }
-        }
-        function getDataFail(jqXHR, textStatus, errorThrown) {
-            console.log("Fail");
-            console.log([jqXHR,textStatus,errorThrown]);
-        }
-        function getDataAlways() {
-            console.log("Always");
-        }
-    </script>
-
-</head>
-<body>
-
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Pwaproto</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="styles.d41d8cd98f00b204e980.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script>if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Service Worker registered');
+      }).catch(function(err) {
+        console.log('Service Worker registration failed: ', err);
+      });
+    }</script><script type="text/javascript" src="inline.cfcbe26f0cae3f07b8d7.bundle.js"></script><script type="text/javascript" src="polyfills.67d068662b88f84493d2.bundle.js"></script><script type="text/javascript" src="vendor.dd97be8fb65ee0109dba.bundle.js"></script><script type="text/javascript" src="main.ab24de69ce977d90f4ba.bundle.js"></script></body></html>
