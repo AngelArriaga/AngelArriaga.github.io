@@ -1,0 +1,134 @@
+/* ad container where ads are rendered */
+.rmp-ad-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: left;
+}
+
+/* non-linear (overlay ads) */
+.rmp-ad-container.rmp-ad-overlay {
+  top: -40px;
+}
+
+.rmp-ad-container.rmp-ad-overlay.rmp-ad-no-auto-align {
+  top: 0;
+}
+
+/* ad information within control bar */
+.rmp-ad-info {
+  position: absolute;
+  left: 10%;
+  height: 100%;
+  line-height: 38px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.rmp-ad-info-message {
+  margin-left: 6px;
+}
+
+.rmp-ad-info-countdown {
+  margin-left: 6px;
+}
+
+.rmp-ad-info-pod {
+  margin-left: 6px;
+}
+
+/* ad skip button */
+.rmp-ad-skip-button {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  height: 38px;
+  width: 38px;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+/* remaining time bar for ads */
+.rmp-ad-current-time {
+  position: absolute;
+  bottom: 38px;
+  height: 3px;
+}
+
+/* .rmp-small */
+.rmp-small .rmp-ad-info {
+  left: 18%;
+}
+
+/* .rmp-extrasmall */
+.rmp-extrasmall .rmp-ad-info {
+  font-size: 11px;
+  left: 20%;
+}
+
+/* rmp-vast */
+
+/* adjust skip button at lower size */
+.rmp-small .rmp-ad-container-skip,
+.rmp-extrasmall .rmp-ad-container-skip {
+  width: 112px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 12px;
+}
+
+/* adjust learn more button at lower size */
+.rmp-small .rmp-ad-click-ui-mobile,
+.rmp-extrasmall .rmp-ad-click-ui-mobile {
+  right: 6px;
+  top: 6px;
+  font-size: 16px;
+  width: 98px;
+  height: 30px;
+  line-height: 26px;
+}
+
+/* ad blocker detected */
+
+.rmp-ad-block-container {
+  position: absolute;
+  background: @light-shadow;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  .transition(~"opacity, visibility", 0.8s);
+}
+
+.rmp-ad-block-container > .rmp-ad-block-text {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  top: 50%;
+  height: auto;
+  color: @white;
+  font-size: 16px;
+  text-align: center;
+  background: @black;
+  padding: 12px;
+  .box-shadow(0 3px 8px rgba(0, 0, 0, 0.35));
+  .transform-translateY();
+}
+
+.rmp-ad-block-detected .rmp-poster {
+  .filter-blur();
+}
+
+.rmp-ad-block-detected > .rmp-outline,
+.rmp-ad-block-detected > .rmp-module,
+.rmp-ad-block-detected > .rmp-title,
+.rmp-ad-block-detected > .rmp-overlay-button,
+.rmp-ad-block-detected > .rmp-loading-spin {
+  display: none;
+}
